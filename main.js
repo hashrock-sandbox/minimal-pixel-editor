@@ -7,7 +7,7 @@ renderer.view.oncontextmenu = function (e) {
 };
 
 var gridSize = 160 / 16;
-var penColor = 0xFF0000;
+var penColor = 0x000000;
 function drawGrid(ctx){
 
 	for(var i = 0; i < 16; i++){
@@ -66,7 +66,7 @@ function animate() {
 }
 
 $("#colorpicker").spectrum({
-    color: "#000000",
+    color: penColor,
 	showButtons: false,
 	move: function(color){
 		penColor = parseInt(color.toHex(), 16);
