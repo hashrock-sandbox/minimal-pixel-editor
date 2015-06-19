@@ -1,7 +1,6 @@
 var renderer = PIXI.autoDetectRenderer(160, 160, { antialias: true });
 document.querySelector(".container").appendChild(renderer.view)
 
-
 renderer.view.oncontextmenu = function (e) {
     e.preventDefault();
 	console.log([e.offsetX, e.offsetY])
@@ -9,7 +8,6 @@ renderer.view.oncontextmenu = function (e) {
 
 var gridSize = 160 / 16;
 var penColor = 0xFF0000;
-
 function drawGrid(ctx){
 
 	for(var i = 0; i < 16; i++){
@@ -22,7 +20,6 @@ function drawGrid(ctx){
 	}
 }
 
-// create the root of the scene graph
 var stage = new PIXI.Container();
 stage.interactive = true;
 var ctx = new PIXI.Graphics();
@@ -61,7 +58,6 @@ stage.mouseup = function(){
 	mousedown = false;
 }
 
-// run the render loop
 animate();
 
 function animate() {
@@ -70,9 +66,9 @@ function animate() {
 }
 
 $("#colorpicker").spectrum({
-    color: "#f00",
+    color: "#000000",
 	showButtons: false,
 	move: function(color){
-		penColor = color.toHex();
+		penColor = parseInt(color.toHex(), 16);
 	}
 });
